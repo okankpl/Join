@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontakte</title>
+    <link rel="stylesheet" href="./assets/css/contacts.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/css/contactMediaQuery.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/img/favicon.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body onload="initContacts()">
+    <div w3-include-html="./assets/templates/header.html"></div>
+    <div class="overlay-contacts" id="overlayContacts"></div>
+
+    <div class="container-desktop">
+      <div id="center-contacts">
+        <div class="desktop-add-contact-container">
+          <div class="height-vh">
+            <div
+              id="addContactDesktop"
+              onclick="openAddContact()"
+              style="display: flex"
+            >
+              <span>Add new contact</span>
+              <div>
+                <img src="assets/img/person_add.png" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div id="contactsList"></div>
+        </div>
+      </div>
+
+      <div id="contact" style="display: none"></div>
+      <div class="slogan-container-desktop" id="sloganContainerDesktop">
+        <div>
+          <h1>Contacts</h1>
+          <div class="contact-line-desktop"></div>
+          <span class="slogan-contact">Better with a Team</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="addContactImg" onclick="openAddContact()" class="addContactImg">
+      <img src="assets/img/person_add.png" alt="" />
+    </div>
+
+    <div class="center-add-card" id="center-add-card">
+      <div class="addContactCard" id="addContactCard">
+        <div class="addContactUpperCard">
+          <div onclick="closeAddContactCard()" class="closeAddContact">
+            <img src="assets/img/close.png" alt="" />
+          </div>
+
+          <div class="vertical-center">
+            <div id="logoDesktopContact">
+              <img src="assets/img/logo-desktop.png" alt="" />
+            </div>
+            <h1>Add Contact</h1>
+            <span class="slogan-contact">Tasks are better with a team!</span>
+            <div id="contactUnderlinie" class="contact-underline"></div>
+          </div>
+
+          <div class="personImgaAddContact display-flex-margin">
+            <img src="assets/img/add-contact-person.png" alt="" />
+          </div>
+        </div>
+
+        <div class="createContactFormContainer">
+          <div class="close-card-desktop">
+            <img
+              onclick="closeAddContactCard()"
+              src="assets/img/close_black.png"
+              alt=""
+            />
+          </div>
+          <form
+            class="createContactForm"
+            onsubmit="createContact(); return false;"
+          >
+            <input
+              required
+              class="input-background-image contact-input-name"
+              type="text"
+              id="name"
+              placeholder="Name"
+            />
+            <input
+              required
+              class="input-background-image contact-input-email"
+              type="email"
+              id="email"
+              placeholder="E-Mail"
+            />
+            <input
+              required
+              class="input-background-image contact-input-phone"
+              pattern="\+?[0-9\s]*[0-9][0-9\s]*"
+              type="tel"
+              id="phone"
+              placeholder="Phone"
+            />
+            <div class="display-flex">
+              <div onclick="closeAddContactCard()" class="cancel-add-contact">
+                Cancel <img src="assets/img/close_black.png" alt="" />
+              </div>
+              <div id="createContactBtn">
+                <button>Create Contact</button>
+                <img src="assets/img/check-new.png" alt="" />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="center-add-card" id="centerEditCard">
+      <div class="addContactCard" id="editContactCard">
+        <div class="addContactUpperCard">
+          <div onclick="closeEditContactCard()" class="closeAddContact">
+            <img src="assets/img/close.png" alt="" />
+          </div>
+          <div class="vertical-center edit-vertical">
+            <div id="logoDesktopContact">
+              <img src="assets/img/logo-desktop.png" alt="" />
+            </div>
+            <h1>Edit Contact</h1>
+            <div id="contactUnderline" class="contact-underline"></div>
+          </div>
+          <div
+            class="personImgaAddContact margin-top-32 edit-person-add"
+            id="editCardIcon"
+          ></div>
+        </div>
+        <div class="createContactFormContainer">
+          <div class="close-card-desktop">
+            <img
+              onclick="closeEditContactCard()"
+              src="assets/img/close_black.png"
+              alt=""
+            />
+          </div>
+          <form
+            class="createContactForm"
+            onsubmit="updateContact(); return false;"
+          >
+            <input
+              required
+              class="input-background-image contact-input-name"
+              type="text"
+              id="edit-name"
+              placeholder="Name"
+            />
+            <input
+              required
+              class="input-background-image contact-input-email"
+              type="email"
+              id="edit-email"
+              placeholder="E-Mail"
+            />
+            <input
+              required
+              class="input-background-image contact-input-phone"
+              type="tel"
+              id="edit-phone"
+              placeholder="Phone"
+              pattern="\+?[0-9\s]*[0-9][0-9\s]*"
+            />
+            <div class="btn-container-edit">
+              <div id="editContactBtn">
+                <button class="saveBtn">Save</button>
+                <img src="assets/img/check-new.png" alt="" />
+              </div>
+              <div onclick="deleteContact()" class="deleteBtn">Delete</div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="center-add-contact-animation" id="centerAddContactAnimation">
+      <div class="createContactAnimation" id="createContactAnimation">
+        Contact successfully created!
+      </div>
+    </div>
+    <script src="./assets/js/header-menu.js"></script>
+    <script src="./assets/js/contacts.js"></script>
+    <script src="./assets/js/renderContacts.js"></script>
+    <script src="script.js"></script>
+    <script src="./assets/js/storage.js"></script>
+    <div w3-include-html="./assets/templates/navigation.html"></div>
+    <script src="./assets/js/header-menu.js"></script>
+  </body>
+</html>

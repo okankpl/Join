@@ -1,0 +1,288 @@
+::-webkit-scrollbar {
+  width: 12px;
+  height: 90%;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #d1d1d1;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+.back-to-contacts-img img:hover,
+.closeAddContact img:hover,
+.edit-image-contact:hover,
+.center-img-text:hover,
+.cancel-add-contact:hover,
+#createContactBtn:hover,
+.close-card-desktop img:hover,
+.addContactImg:hover,
+.editContactImg:hover,
+.edit-contacts-options div:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.contact:hover,
+.addContactImg:hover,
+.closeAddContact img,
+.deleteBtn,
+.back-to-contacts-img img {
+  cursor: pointer;
+}
+
+@media (max-width: 429px) {
+  .addContactCard {
+    width: 310px !important;
+    height: 630px;
+  }
+
+  #createContactbtn,
+  #editContactBtn button,
+  .deleteBtn {
+    font-size: 18px !important;
+  }
+
+  #editContactBtn img {
+    width: 18px;
+  }
+
+  .addContactCard h1 {
+    font-size: 32px;
+  }
+  .addContactCard input {
+    width: 280px;
+    height: 30px;
+  }
+
+  .addContactUpperCard {
+    height: 275px;
+  }
+
+  .createContactFormContainer {
+    margin-top: 76px;
+  }
+  .vertical-center {
+    margin-top: 50px;
+  }
+  .display-flex-margin {
+    margin-top: 0px;
+  }
+
+  #contact {
+    padding-top: 80px;
+  }
+
+  h1 {
+    font-size: 33px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h4 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 1440px) {
+  #addContactDesktop,
+  #editDeleteDesktop {
+    display: none !important;
+  }
+
+  #logoDesktopContact,
+  .cancel-add-contact,
+  .close-card-desktop,
+  .slogan-container-desktop,
+  .height-vh {
+    display: none !important;
+  }
+
+  #contactsList {
+    width: 100% !important;
+  }
+
+  .center {
+    display: block !important;
+  }
+}
+
+@media (min-width: 1440px) {
+  #createContactBtn {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .desktop-add-contact-container {
+    height: 100vh;
+  }
+
+  #addContactDesktop {
+    display: flex !important;
+  }
+  .slogan-container-desktop {
+    display: flex;
+    padding: 210px 0 0 50px;
+    justify-content: center;
+    height: 100px;
+  }
+  .slogan-container-desktop div {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .slogan-show-contact {
+    display: flex !important;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 40px;
+  }
+
+  .contact {
+    width: 350px !important;
+    height: 80px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .contact-line-desktop {
+    height: 60px;
+    width: 3px;
+    background-color: #29abe2;
+    display: block !important;
+  }
+
+  .contact-underline {
+    display: none !important;
+  }
+
+  #sidebar {
+    width: 230px;
+    background-color: #2a3647;
+    height: 100%;
+    display: flex !important;
+  }
+  #footer,
+  #editContactImg,
+  #addContactImg {
+    display: none !important;
+  }
+
+  #contactsList {
+    padding: 0 0 0 10px;
+    max-height: 96% !important;
+    display: flex !important;
+    overflow-y: auto !important;
+    width: 450px;
+    height: 80vh;
+    margin-left: 242px;
+    background-color: white;
+    max-width: 450px;
+  }
+
+  .desktop-add-contact-container {
+    width: 100% !important;
+  }
+  .contacts-container,
+  #header,
+  .container-desktop,
+  #contactUnderline {
+    display: flex !important;
+  }
+
+  #contact {
+    z-index: auto;
+  }
+
+  .addContactCard {
+    height: 600px;
+    width: 1200px;
+    display: flex;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+  }
+
+  .addContactCard input {
+    width: 422px;
+    margin-top: 22px;
+  }
+  .addContactUpperCard {
+    height: 100%;
+    width: 450px;
+    border-bottom-left-radius: 30px;
+    border-top-right-radius: 0;
+  }
+  .personImgaAddContact {
+    margin-left: 550px;
+    margin-top: -315px !important;
+  }
+  .createContactFormContainer {
+    margin-left: 290px;
+  }
+
+  .vertical-center {
+    height: 100% !important;
+    margin-top: -40px;
+  }
+
+  .closeAddContact {
+    display: none;
+  }
+
+  .edit-vertical {
+    margin-top: 10px;
+  }
+  .edit-person-add {
+    margin-top: -360px !important;
+  }
+
+  .close-card-desktop {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    margin-bottom: 60px;
+    padding-bottom: 50px;
+  }
+  .close-card-desktop img {
+    width: 13.5px;
+    height: 13.5px;
+    cursor: pointer;
+  }
+
+  .createContactFormContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-top: 0;
+  }
+
+  .btn-container-edit {
+    flex-direction: row-reverse;
+    justify-content: start !important;
+  }
+
+  .addContactCard {
+    transform: translateX(100%);
+  }
+
+  .createContactAnimation {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-height: 900px) {
+  #editContactOptions {
+    top: 550px;
+  }
+}
+
+@media (max-height: 750px) {
+  #editContactOptions {
+    top: 430px;
+  }
+}

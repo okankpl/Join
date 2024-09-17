@@ -1,0 +1,96 @@
+<div id="edit-task-container">
+    <button class="close-edit-menu-button" onclick="closeEditMenu()"><img src="assets/img/close_black.png"
+            alt="arrow-up"></button>
+    <div class="add-task-container no-margin-and-height">
+        <div class="task-input-container">
+            <div class="title-container">
+                <label for="title">Title<sup>*</sup></label>
+                <input id="title" type="text" placeholder="Enter a title" required></input>
+                <div class="d-none required" id="title-required">This field is required</div>
+            </div>
+            <div class="description-container">
+                <label for="description">Description</label>
+                <textarea id="description" type="text" placeholder="Enter a Description" rows="10"></textarea>
+            </div>
+            <div class="prio-container">
+                <span>Prio</span>
+                <div id="prio">
+                    <button id="highPrioButton" onclick="setPriority('high')">
+                        <div id="highPrioButtonFont">Urgent<img src="assets/img/board-urgent.png" alt="arrow-up">
+                        </div>
+                    </button>
+                    <button class="prioMedium" id="mediumPrioButton" onclick="setPriority('medium')">
+                        <div class="colored-white font-weight-clicked" id="mediumPrioButtonFont">Medium<img
+                                src="assets/img/board-medium.png" alt="arrow-up">
+                        </div>
+                    </button>
+                    <button id="lowPrioButton" onclick="setPriority('low')">
+                        <div id="lowPrioButtonFont">Low<img src="assets/img/board-low.png" alt="arrow-down"></div>
+                    </button>
+                </div>
+            </div>
+            <div class="due-date-container">
+                <label for="dueDate">Due date<sup>*</sup></label>
+                <input id="dueDate" type="text" placeholder="dd/mm/yyyy" onfocus="(this.type='date')"
+                    onblur="(this.type='text')" required></input>
+                <div class="d-none required" id="dueDate-required">This field is required</div>
+            </div>
+            <div class="category-container">
+                <label for="category">Category<sup>*</sup></label>
+                <button onclick="openCategoryContainer()" id="category-btn">
+                    <div id="category-selected">Select task category</div><img src="assets/img/arrow_drop_down.png"
+                        alt="arrow-down">
+                </button>
+                <div id="category-dropdown-menu" class="d-none">
+                    <span onclick="selectCategory('Technical Task')">Technical Task</span>
+                    <span onclick="selectCategory('User Story')">User Story</span>
+                    <span onclick="selectCategory('Other')">Other</span>
+                </div>
+                <div class="d-none required" id="category-required">This field is required</div>
+            </div>
+            <div class="assigned-to-container">
+                <label for="assigned-to-btn">Assigned to</label>
+                <button onclick="openAssignContainer()" id="assigned-to-btn">
+                    <div id="buttontext">Select contacts to assign </div><img src="assets/img/arrow_drop_down.png"
+                        alt="arrow-down">
+                </button>
+                <div id="contacts-to-assign-container" class="d-none">
+                    <ul id="contacts-to-assign-list">
+                    </ul>
+                </div>
+                <div id="contact-circles-container" class="">
+
+                </div>
+            </div>
+            <div class="subtasks-container margin-bottom-no-height">
+                <label for="subtasks">Subtasks</label>
+                <div id="subtasks-input-button-container" class="input-button-container">
+                    <input id="subtasks" type="text" placeholder="Add new subtask"></input>
+                    <div class="subtask-button-container">
+                        <button class="d-none" id="erase-subtask" onclick="eraseSubtask()"><img
+                                src="assets/img/close_black.png"></button>
+                        <div id="separator" class="d-none separator"></div>
+                        <button id="add-subtask-button" onclick="addSubtasks()"><img src="assets/img/tick.png"></button>
+                    </div>
+                </div>
+
+                <div id="subtasks-list-container">
+
+                    <div id="subtasks-list">
+                    </div>
+                </div>
+
+            </div>
+            <div class="add-task-footnote-container edit-footnote-button">
+                <div class="clear-create-button-container">
+                    <button onclick="resetEverything()" class="button">Clear <img src="assets/img/close.png"
+                            alt="close">
+                    </button>
+                    <button onclick="createTask('edit')" class="button">Edit Task <img src="assets/img/check-new.png"
+                            alt="check"></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
